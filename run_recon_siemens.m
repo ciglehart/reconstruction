@@ -41,6 +41,7 @@ for ii = 1:nE
     end
 end
 
-im = t2_star_reconstruction(k,m,s,n_iterations,lambda);
+im = t2_star_reconstruction(k,m,s,n_iterations,lambda,savefile);
 save(savefile,'im');
+
 end
