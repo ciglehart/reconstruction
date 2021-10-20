@@ -107,7 +107,7 @@ ksp_adj_phase = A_adj_phase(ksp_phase);
 rho = 0.5;
 %iter_ops.objfun = @(a, sv, lam) 0.5*norm_mat(ksp - A_for(a))^2 + lam*sum(sv(:));
 %iter_ops.objfun = @(a, sv, lam) 0.5*norm_mat(A_adj(ksp) - a)^2 + lam*sum(sv(:));
-beta = admm(A_for_phase,A_adj_phase,ksp_adj_phase,ksp_phase,n_iterations,lambda,rho);
-im = mag.*exp(1j*Psi_for(beta));
+% beta = admm(A_for_phase,A_adj_phase,ksp_adj_phase,ksp_phase,n_iterations,lambda,rho);
+% im = mag.*exp(1j*Psi_for(beta));
 save(savefile,'im');
 end

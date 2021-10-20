@@ -1,0 +1,10 @@
+addpath('~/Desktop/cpd-master');
+nE = 8;
+ny = 256;
+nz = 256;
+FOVRatio = ny/nz;
+shapeOpt = 'cross';
+Areg = zpad(ones(24,24), [ny nz]);
+valid = ones(ny, nz) - Areg;
+mask = genUDCPD(nE,FOVRatio,valid,shapeOpt) + repmat(Areg, [1 1 nE]);
+save('mask_cpd_acc_8','mask');
